@@ -25,7 +25,7 @@
         var marker;
         // Initialize and add the map
         function initMap() {
-            document.getElementById('json').innerHTML(JSON.stringify(routCoordinates));
+            document.getElementById('json').innerHTML = JSON.stringify(routCoordinates);
             // The location of Uluru
             var uluru = {lat: 40.728783, lng:-73.78972379999999};
             // The map, centered at Uluru
