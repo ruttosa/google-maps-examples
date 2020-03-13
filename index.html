@@ -17,6 +17,7 @@
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
     <div id="map"></div>
+    <div id="json"></div>
     <script>
         var routCoordinates = [{"lat":40.728783,"lng":-73.78972379999999},{"lat":40.6756294,"lng":-73.9481861},{"lat":40.7282294,"lng":-73.79479669999999},{"lat":40.6781877,"lng":-73.9442203},{"lat":40.6783327,"lng":-73.9481861},{"lat":40.6781877,"lng":-73.9442203},{"lat":40.678031,"lng":-73.94422759999999},{"lat":40.6781877,"lng":-73.9442203},{"lat":40.6781965,"lng":-73.947104},{"lat":40.678031,"lng":-73.94422759999999},{"lat":40.6783327,"lng":-73.9481861},{"lat":40.678185,"lng":-73.947105},{"lat":40.6996082,"lng":-73.8085299},{"lat":40.6783327,"lng":-73.9481861},{"lat":40.6996082,"lng":-73.8085299},{"lat":40.6783327,"lng":-73.9481861},{"lat":40.7005231,"lng":-73.807833},{"lat":40.6996082,"lng":-73.8085299},{"lat":40.700344,"lng":-73.80813599999999},{"lat":40.6996082,"lng":-73.8085299},{"lat":40.7005231,"lng":-73.807833},{"lat":40.7004271,"lng":-73.8081851},{"lat":40.728783,"lng":-73.792847},{"lat":40.700516,"lng":-73.807831},{"lat":40.728783,"lng":-73.792847},{"lat":40.700516,"lng":-73.807831},{"lat":40.7282294,"lng":-73.79479669999999},{"lat":40.7287798,"lng":-73.79286019999999},{"lat":40.7285106,"lng":-73.7928464},{"lat":40.7287798,"lng":-73.79286019999999},{"lat":40.7280906,"lng":-73.79477229999999},{"lat":40.7285106,"lng":-73.7928464},{"lat":40.7282294,"lng":-73.79479669999999},{"lat":40.7280906,"lng":-73.79477229999999}];
         var indexCounter = 0;
@@ -24,11 +25,12 @@
         var marker;
         // Initialize and add the map
         function initMap() {
+            document.getElementById('json').innerHTML(JSON.stringify(routCoordinates));
             // The location of Uluru
             var uluru = {lat: 40.728783, lng:-73.78972379999999};
             // The map, centered at Uluru
             map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 10, center: uluru});
+                document.getElementById('map'), {zoom: 13, center: uluru});
             // The marker, positioned at Uluru
             marker = new google.maps.Marker({position: uluru, map: map});
 
